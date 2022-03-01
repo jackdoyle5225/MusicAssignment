@@ -1,8 +1,14 @@
 # Music Visualiser Project
 
 Name:
+	Jack Doyle
+	Stephen Hughes
+	Michael Farrell
 
 Student Number: 
+	C17315223
+	.
+	.	
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
