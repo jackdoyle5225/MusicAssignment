@@ -10,15 +10,14 @@ public class Michael {
 
     public void drawCircle(JackVisual z) {       // Draws Circles
     
-        z.calculateAverageAmplitude();  
-        float circle = (1000 * z.getSmoothedAmplitude());   
+        z.calculateAverageAmplitude();   
         z.stroke(z.random(0,255),255,255);        
-        z.strokeWeight(5);
+        z.strokeWeight(3);
         z.noFill();
-        z.ellipse(z.width / 2, z.height / 2, 1000 + (z.lerpedAverage * 300), 1000 + (z.lerpedAverage * 300) + circle);
-        z.ellipse(z.width / 2, z.height / 2, 800 + (z.lerpedAverage * 300), 800 + (z.lerpedAverage * 300) + circle); 
-        z.ellipse(z.width / 2, z.height / 2, 600 + (z.lerpedAverage * 300), 600 + (z.lerpedAverage * 300) + circle); 
-        z.ellipse(z.width / 2, z.height / 2, 400 + (z.lerpedAverage * 300), 400 + (z.lerpedAverage * 300) + circle); 
+        z.ellipse(z.width / 2, z.height / 2, 50 + ((z.getSmoothedBands()[0])/1.5f), 50 + ((z.getSmoothedBands()[0])/1.5f));
+        z.ellipse(z.width / 2, z.height / 2, 30 + ((z.getSmoothedBands()[0])/1.5f), 30 + ((z.getSmoothedBands()[0])/1.5f)); 
+        z.ellipse(z.width / 2, z.height / 2, 10 + ((z.getSmoothedBands()[0])/1.5f), 10 + ((z.getSmoothedBands()[0])/1.5f)); 
+        z.ellipse(z.width / 2, z.height / 2, 5 + ((z.getSmoothedBands()[0])/1.5f), 5 + ((z.getSmoothedBands()[0])/1.5f)); 
     }
 
     float theta = 0;    // Starting angle

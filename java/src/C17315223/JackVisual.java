@@ -97,7 +97,7 @@ public class JackVisual extends Visual {
         s.drawDiamond(this);
         s.drawCube(this);
         s.drawTunnel(this);
-        // m.drawCircle(this);
+        m.drawCircle(this);
         // m.drawSpiral(this);
 
     }

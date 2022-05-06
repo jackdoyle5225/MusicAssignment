@@ -1,8 +1,11 @@
 package C17315223;
 
+import ddf.minim.*;
+import ddf.minim.analysis.FFT;
 import ie.tudublin.*;
 
-public class Project extends Visual{
+
+public class Project extends JackVisual{
 
     public void settings()
     {
@@ -13,6 +16,10 @@ public class Project extends Visual{
     int mode = 1;
     int border = 0;
     boolean paused = false;
+
+    Stephen s = new Stephen();
+    Michael m = new Michael();
+    JackVisual j = new JackVisual();
 
     public void keyPressed()
     {
@@ -59,44 +66,42 @@ public class Project extends Visual{
                 getAudioPlayer().play();
                 break;
             }
-            case '4':
-            {
-                getAudioPlayer().cue(0);
-                getAudioPlayer().play();
-                break;
-            }
         }
     }
 
     public void setup()
     {
-        colorMode(RGB);
+        colorMode(HSB);
+        frameRate(60);
 
         startMinim();
         loadAudio("visions.mp3");
         getAudioPlayer();
-
         background(0);
-    }
 
-    Stephen s = new Stephen();
-    Michael m = new Michael();
-    JackVisual j = new JackVisual();
-    //michael
+        try {
+            calculateFFT(); 
+        }
+        catch(VisualException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void draw()
     {
+        background(0);
         switch(mode)
         {
             case 1:
             {
-
+                m.render(this);
+                break;
             }
             
             case 2:
             {  
-                // s.render(this);
-                // break;
+                s.render(this);
+                break;
             }
 
             case 3: 
@@ -104,11 +109,6 @@ public class Project extends Visual{
                 break;
             }
 
-            case 4: 
-            {
-                // m.render(this);
-                // break;
-            }
         }
     }
 
