@@ -54,7 +54,7 @@ The other element i created was the spotlight effect. These react to the amplitu
 **Stephen**  
 The diamond shape in the centre is what I am most proud of with the amplitude of it making it pulse to the song - the lines "tunnel" connecting the the diamond shape also interacts with parts of the code in diamond to have the connecting lines expand and shrink to the amplitude in conjunction with the diamond shape. In my final render I also have a border which is similar to the waveform, however I made it expand from the top and bottom of the screen again, to the amplitude of the song
 
-- Shape of diamond being mapped out the vertex and including height and width --
+**Shape of diamond being mapped out the vertex and including height and width**
 
 	z.beginShape();
 	z.vertex(z.width / 2, z.height / 2 + diamond *2);
@@ -70,7 +70,7 @@ The diamond shape in the centre is what I am most proud of with the amplitude of
 	z.beginShape();
 
 
-- Tunnel connecting to middle diamond shape with it touching the edges of the diamond to expand and shrink --
+**Tunnel connecting to middle diamond shape with it touching the edges of the diamond to expand and shrink**
 
 	
 	z.beginShape();
