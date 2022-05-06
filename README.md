@@ -56,7 +56,7 @@ The diamond shape in the centre is what I am most proud of with the amplitude of
 
 -- Shape of diamond being mapped out the vertex and including height and width --
 
-	
+	```java
 	z.beginShape();
 	z.vertex(z.width / 2, z.height / 2 + diamond *2);
 	//vertex(width / 2 + 10, height / 2 + 10);
@@ -69,6 +69,7 @@ The diamond shape in the centre is what I am most proud of with the amplitude of
 	//vertex(width /2 - 10, height /2 + 10);
 	z.endShape();
 	z.beginShape();
+	```
 
 
 -- Tunnel connecting to middle diamond shape with it touching the edges of the diamond to expand and shrink --
