@@ -7,10 +7,10 @@ public class Stephen
 {
     
     // draws the diamond 
-    void drawDiamond(Project z)
+    void drawDiamond(JackVisual z)
     {
         z.calculateAverageAmplitude();
-        float diamond = 10 + (200 * z.getSmoothedAmplitude()); 
+        float diamond = 10 + ((z.getSmoothedBands()[0])/1.5f); 
         z.stroke(z.random(0,255),255,255);
         z.pushMatrix();
         z.fill(0);
@@ -42,12 +42,12 @@ public class Stephen
 
 
     // Lines connecting to diamond in the middle will close and expand to music.
-    void drawTunnel(Project z)
+    void drawTunnel(JackVisual z)
     {
         z.pushMatrix();
         z.fill(0);
         z.beginShape();
-        float diamond = 10 + (200 * z.getSmoothedAmplitude()); 
+        float diamond = 10 + ((z.getSmoothedBands()[0])/1.5f);
         z.stroke(z.random(0,255),255,255);
         z.strokeWeight(3);
         z.line(0, 0, z.width / 2 - diamond, z.height / 2 - diamond);
@@ -60,9 +60,9 @@ public class Stephen
 
 
     // Cube rotating around diamond - will pulse to the music.
-    void drawCube(Project z){
+    void drawCube(JackVisual z){
         z.calculateAverageAmplitude();
-        z.stroke(PApplet.map(z.getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
+       z.stroke(100 + z.getSmoothedBands()[3],100 + z.getSmoothedBands()[5],100 + z.getSmoothedBands()[0]);
         z.strokeWeight(5);
         z.noFill();
         z.lights();
@@ -75,12 +75,12 @@ public class Stephen
         float boxSize = 50 + (200 * z.getSmoothedAmplitude()); 
         z.box(boxSize);   
         z.popMatrix();
-        angle += 0.01f; 
+        angle += z.getSmoothedAmplitude()/2; 
         
     }
     
 
-    void drawBorder(Project z)
+    void drawBorder(JackVisual z)
     {
         this.z = z;
         cy = this.z.height / 10;
@@ -103,7 +103,7 @@ public class Stephen
 
     
     // rending all of the drawings to the screen
-    public void render(Project z)
+    public void render(JackVisual z)
     {
         z.background(0);  
 
@@ -120,7 +120,7 @@ public class Stephen
     // For the rotation of the cube
     float lerpedAverage = 0;
     float angle = 0;
-    Project z;
+    JackVisual z;
     float cy = 0;
     
 }

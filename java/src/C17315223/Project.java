@@ -7,7 +7,6 @@ public class Project extends Visual{
     public void settings()
     {
         fullScreen(P3D);
-        
     }
 
     int lerpedAverage;
@@ -87,7 +86,6 @@ public class Project extends Visual{
 
     public void draw()
     {
-        background(0);
         switch(mode)
         {
             case 1:
@@ -97,15 +95,13 @@ public class Project extends Visual{
             
             case 2:
             {  
-                s.render(this);
-                break;
+                // s.render(this);
+                // break;
             }
 
             case 3: 
             {
-                ;
                 break;
-              
             }
 
             case 4: 

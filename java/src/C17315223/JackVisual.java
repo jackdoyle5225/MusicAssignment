@@ -9,6 +9,8 @@ public class JackVisual extends Visual {
     public int noWalls = 400;
     public Wall[] walls;
 
+    Stephen s = new Stephen();
+
     public void settings() {
        fullScreen(P3D);
     }
@@ -89,5 +91,10 @@ public class JackVisual extends Visual {
 
             previousBandValue = bandValue;
         }
+
+        s.drawDiamond(this);
+        s.drawCube(this);
+        s.drawTunnel(this);
+
     }
 }
