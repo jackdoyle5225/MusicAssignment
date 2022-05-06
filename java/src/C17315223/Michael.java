@@ -1,6 +1,6 @@
 package C17315223;
 
-import java.util.Random;
+
 import processing.core.PApplet;
 
 public class Michael {

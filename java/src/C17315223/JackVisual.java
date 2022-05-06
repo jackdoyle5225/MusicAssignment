@@ -1,6 +1,5 @@
 package C17315223;
 
-
 import ie.tudublin.*;
 
 public class JackVisual extends Visual {
@@ -10,7 +9,18 @@ public class JackVisual extends Visual {
     public int noWalls = 400;
     public Wall[] walls;
 
-    public void display() {
+    public void settings() {
+       fullScreen(P3D);
+    }
+   
+    public void setup() {
+        colorMode(RGB);
+
+        startMinim();
+        loadAudio("visions.mp3");
+        getAudioPlayer();
+
+        background(0);
 
         walls = new Wall[noWalls];
         //creates walls for each side
@@ -29,7 +39,12 @@ public class JackVisual extends Visual {
         for(int i = 3; i < noWalls; i+=4) {
             walls[i] = new Wall(width/2, 0f, width, 10f, p);
         }
-        
+        getAudioPlayer().cue(0);
+        getAudioPlayer().play();
+    }
+   
+    public void draw() {
+        background(0);
         try {
             calculateFFT(); 
         }
@@ -40,7 +55,7 @@ public class JackVisual extends Visual {
         for(int i = 0; i < noWalls; i++) {
             walls[i].display(this);
         }
-
+        
         calculateFrequencyBands();
         calculateAverageAmplitude();
         //display spotlight effect
