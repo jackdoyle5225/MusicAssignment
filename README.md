@@ -73,7 +73,7 @@ The diamond shape in the centre is what I am most proud of with the amplitude of
 
 -- Tunnel connecting to middle diamond shape with it touching the edges of the diamond to expand and shrink --
 
-	```Java
+	
 	z.beginShape();
 	float diamond = 10 + (200 * z.getSmoothedAmplitude()); 
 	z.stroke(z.random(0,255),255,255);
@@ -83,7 +83,7 @@ The diamond shape in the centre is what I am most proud of with the amplitude of
 	z.line(800, 800, z.width / 2 + diamond, z.height / 2 + diamond);
 	z.line(800, 0, z.width / 2 + diamond, z.height / 2 - diamond);
 	z.endShape();
-	```
+	
 
 **Michael**  
 The part of my visual I am most proud of is the spinning spiral of various hue changing coloring that that rotates and expands at an angle along with the amplitude. It took many hours of watching various tutorials to implement and countless hours of tweaking values to have it presented in the way I wanted. I am also proud of us as a group working together to combine our visuals together for the final combination visual.
