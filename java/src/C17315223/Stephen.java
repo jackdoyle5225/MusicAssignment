@@ -62,7 +62,7 @@ public class Stephen
     // Cube rotating around diamond - will pulse to the music.
     void drawCube(JackVisual z){
         z.calculateAverageAmplitude();
-       z.stroke(100 + z.getSmoothedBands()[3],100 + z.getSmoothedBands()[5],100 + z.getSmoothedBands()[0]);
+       z.stroke(100 + z.getSmoothedBands()[6],100 + z.getSmoothedBands()[7],100 + z.getSmoothedBands()[6]);
         z.strokeWeight(5);
         z.noFill();
         z.lights();
@@ -75,7 +75,7 @@ public class Stephen
         float boxSize = 50 + (200 * z.getSmoothedAmplitude()); 
         z.box(boxSize);   
         z.popMatrix();
-        angle += z.getSmoothedAmplitude()/2; 
+        angle += z.getSmoothedBands()[6]/3000;
         
     }
     

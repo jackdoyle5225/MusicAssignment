@@ -8,26 +8,26 @@ public class Michael {
   float angle = 0;
   float c;
 
-    public void drawCircle(Project z) {       // Draws Circles
+    public void drawCircle(JackVisual z) {       // Draws Circles
     
-        z.calculateAverageAmplitude();
-        z.stroke(PApplet.map(z.getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);      
+        z.calculateAverageAmplitude();  
+        float circle = (1000 * z.getSmoothedAmplitude());   
         z.stroke(z.random(0,255),255,255);        
         z.strokeWeight(5);
         z.noFill();
-        z.ellipse(z.width / 2, z.height / 2, 1000 + (z.lerpedAverage * 300), 1000 + (z.lerpedAverage * 300));
-        z.ellipse(z.width / 2, z.height / 2, 800 + (z.lerpedAverage * 300), 800 + (z.lerpedAverage * 300)); 
-        z.ellipse(z.width / 2, z.height / 2, 600 + (z.lerpedAverage * 300), 600 + (z.lerpedAverage * 300)); 
-        z.ellipse(z.width / 2, z.height / 2, 400 + (z.lerpedAverage * 300), 400 + (z.lerpedAverage * 300)); 
+        z.ellipse(z.width / 2, z.height / 2, 1000 + (z.lerpedAverage * 300), 1000 + (z.lerpedAverage * 300) + circle);
+        z.ellipse(z.width / 2, z.height / 2, 800 + (z.lerpedAverage * 300), 800 + (z.lerpedAverage * 300) + circle); 
+        z.ellipse(z.width / 2, z.height / 2, 600 + (z.lerpedAverage * 300), 600 + (z.lerpedAverage * 300) + circle); 
+        z.ellipse(z.width / 2, z.height / 2, 400 + (z.lerpedAverage * 300), 400 + (z.lerpedAverage * 300) + circle); 
     }
 
     float theta = 0;    // Starting angle
 
-    void setup(float size, Project z) {
+    void setup(float size, JackVisual z) {
     z.size(400, 300);
     }
 
-    void draw(float sin,Project z) {
+    void draw(float sin,JackVisual z) {
     z.background(255);
 
     theta += 0.02;    // Increases theta 
@@ -51,11 +51,11 @@ public class Michael {
         return 0;
     }
 
-    public void drawSpiral(Project z)       // Draws spiral in the middle that expands with music volume
+    public void drawSpiral(JackVisual z)       // Draws spiral in the middle that expands with music volume
     {
-        z.background(0);
+        // z.background(0);
         z.stroke(255);
-        z.colorMode(PApplet.HSB);
+        // z.colorMode(PApplet.HSB);
         z.camera();
         float average = 0;
         float sum = 0;
@@ -87,9 +87,8 @@ public class Michael {
     drawCircle(z);
     }
 
-    public void render(Project z)     // Reads drawings to the screen
+    public void render(JackVisual z)     // Reads drawings to the screen
     {
         drawSpiral(z);
     }
 }
-

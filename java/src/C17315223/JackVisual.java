@@ -8,8 +8,10 @@ public class JackVisual extends Visual {
     Project p;
     public int noWalls = 400;
     public Wall[] walls;
+    int lerpedAverage;
 
     Stephen s = new Stephen();
+    Michael m = new Michael();
 
     public void settings() {
        fullScreen(P3D);
@@ -95,6 +97,8 @@ public class JackVisual extends Visual {
         s.drawDiamond(this);
         s.drawCube(this);
         s.drawTunnel(this);
+        // m.drawCircle(this);
+        // m.drawSpiral(this);
 
     }
 }
